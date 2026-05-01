@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Underdog Caddie",
+  "version": "0.1.0",
+  "description": "Live best ball exposure overlay for Underdog draft rooms.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://underdogfantasy.com/*",
+    "https://*.underdogfantasy.com/*"
+  ],
+  "action": {
+    "default_title": "Underdog Caddie",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://underdogfantasy.com/*", "https://*.underdogfantasy.com/*"],
+      "js": ["src/content.js"],
+      "css": ["styles/overlay.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

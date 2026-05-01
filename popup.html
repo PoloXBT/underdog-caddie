@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Underdog Caddie</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>Underdog Caddie</span>
+        <strong>CSV + live</strong>
+      </header>
+
+      <section class="metrics">
+        <div>
+          <span>Total teams</span>
+          <b id="entries">0</b>
+        </div>
+        <div>
+          <span>CSV baseline</span>
+          <b id="baselineTeams">0</b>
+        </div>
+        <div>
+          <span>Live tracked</span>
+          <b id="liveTeams">0</b>
+        </div>
+        <div>
+          <span>Players</span>
+          <b id="players">0</b>
+        </div>
+      </section>
+
+      <p id="status">Import an Underdog CSV baseline, then draft normally.</p>
+
+      <section class="sync-panel">
+        <label for="csvImport">Underdog CSV baseline</label>
+        <input id="csvImport" type="file" accept=".csv,text/csv">
+        <button id="importCsv" type="button">Import CSV baseline</button>
+      </section>
+
+      <div class="actions">
+        <button id="refresh" type="button">Refresh</button>
+        <button id="reset" type="button">Reset local data</button>
+      </div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
